@@ -29,7 +29,7 @@ spec:
           appliveview-sample/app-live-view-connector-boot
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/twitter-demo-deploy:latest@sha256:dde2bbd59e986095e8d9471bdcf84f271a71787ca17af44a741c461dfd136d9d
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/twitter-demo-deploy:latest@sha256:8814996337b9fba6b879bd669390c5c477918522fbe521398440e4cbc493a20f
         developer.conventions/target-containers: workload
         services.conventions.apps.tanzu.vmware.com/postgres: postgresql/42.3.6
       labels:
@@ -52,7 +52,7 @@ spec:
           value: stateful
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.lespaulstudioplus.info/tap/supply-chain/twitter-demo-deploy-default@sha256:7be21aac75ed1e041048249452837ae1275595f46b67d96cf4baac17e47892b4
+        image: harbor.lespaulstudioplus.info/tap/supply-chain/twitter-demo-deploy-default@sha256:ccad87072ce1d8707aed195f3196ed2d8e022d9a98438a74b18c6e4054a99fb5
         livenessProbe:
           httpGet:
             path: /livez
