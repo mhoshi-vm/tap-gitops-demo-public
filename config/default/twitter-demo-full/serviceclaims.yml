@@ -2,7 +2,9 @@ apiVersion: servicebinding.io/v1alpha3
 kind: ServiceBinding
 metadata:
   name: twitter-demo-full-postgres
-  annotations: {}
+  annotations:
+    autoscaling.knative.dev/maxScale: "1"
+    autoscaling.knative.dev/minScale: "1"
   labels:
     app.kubernetes.io/part-of: twitter-demo-full
     apps.tanzu.vmware.com/has-tests: "true"
@@ -24,7 +26,9 @@ apiVersion: servicebinding.io/v1alpha3
 kind: ServiceBinding
 metadata:
   name: twitter-demo-full-twitter-secret
-  annotations: {}
+  annotations:
+    autoscaling.knative.dev/maxScale: "1"
+    autoscaling.knative.dev/minScale: "1"
   labels:
     app.kubernetes.io/part-of: twitter-demo-full
     apps.tanzu.vmware.com/has-tests: "true"
