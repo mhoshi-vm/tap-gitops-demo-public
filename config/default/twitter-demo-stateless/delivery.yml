@@ -48,7 +48,7 @@ spec:
           value: none
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.lespaulstudioplus.info/tap/supply-chain/twitter-demo-stateless-default@sha256:39e5be355b5b237aa162b03761c80ee83aaed089935207255531f898a8569949
+        image: harbor.lespaulstudioplus.info/tap/supply-chain/twitter-demo-stateless-default@sha256:b24aba14fa6fc0cffe5792a4d2911dd2fb3b939e64bac38724be8c93d0362113
         livenessProbe:
           httpGet:
             path: /livez
