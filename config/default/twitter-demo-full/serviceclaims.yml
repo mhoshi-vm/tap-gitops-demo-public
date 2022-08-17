@@ -19,4 +19,26 @@ spec:
     apiVersion: serving.knative.dev/v1
     kind: Service
     name: twitter-demo-full
+---
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-full-twitter-secret
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo-full
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo-full
+spec:
+  name: twitter-secret
+  service:
+    apiVersion: v1
+    kind: Secret
+    name: production-twitter
+  workload:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: twitter-demo-full
 
