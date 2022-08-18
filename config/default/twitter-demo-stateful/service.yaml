@@ -15,6 +15,7 @@ spec:
     carto.run/workload-name: twitter-demo-stateful
     conventions.apps.tanzu.vmware.com/framework: spring-boot
     services.conventions.apps.tanzu.vmware.com/postgres: workload
+    services.conventions.apps.tanzu.vmware.com/rabbitmq: workload
     tanzu.app.live.view: "true"
     tanzu.app.live.view.application.actuator.port: "8081"
     tanzu.app.live.view.application.flavours: spring-boot
