@@ -63,4 +63,26 @@ spec:
     apiVersion: serving.knative.dev/v1
     kind: Service
     name: twitter-demo
+---
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-sso
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo
+spec:
+  name: sso
+  service:
+    apiVersion: sso.apps.tanzu.vmware.com/v1alpha1
+    kind: ClientRegistration
+    name: my-client-registration
+  workload:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: twitter-demo
 
