@@ -11,9 +11,9 @@ metadata:
 spec:
   name: rabbitmq
   service:
-    apiVersion: rabbitmq.com/v1beta1
-    kind: RabbitmqCluster
-    name: rmq-1
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: rmq-claim
   workload:
     apiVersion: apps/v1
     kind: Deployment
@@ -32,9 +32,9 @@ metadata:
 spec:
   name: twitter-secret
   service:
-    apiVersion: v1
-    kind: Secret
-    name: production-twitter
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: twitter-claim
   workload:
     apiVersion: apps/v1
     kind: Deployment
