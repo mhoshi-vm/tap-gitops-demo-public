@@ -16,7 +16,7 @@ spec:
     name: rmq-claim
   workload:
     apiVersion: apps/v1
-    kind: StatefulSet
+    kind: Deployment
     name: twitter-demo-stateful
 ---
 apiVersion: servicebinding.io/v1alpha3
@@ -37,7 +37,7 @@ spec:
     name: twitter-claim
   workload:
     apiVersion: apps/v1
-    kind: StatefulSet
+    kind: Deployment
     name: twitter-demo-stateful
 ---
 apiVersion: servicebinding.io/v1alpha3
@@ -58,6 +58,6 @@ spec:
     name: wavefront-claim
   workload:
     apiVersion: apps/v1
-    kind: StatefulSet
+    kind: Deployment
     name: twitter-demo-stateful
 

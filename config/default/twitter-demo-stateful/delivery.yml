@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: twitter-demo-stateful
   annotations:
@@ -23,6 +23,12 @@ spec:
       tanzu.app.live.view.application.actuator.port: "8081"
       tanzu.app.live.view.application.flavours: spring-boot
       tanzu.app.live.view.application.name: twitter-demo-stateful
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
   template:
     metadata:
       annotations:
