@@ -60,8 +60,6 @@ spec:
       - env:
         - name: SPRING_PROFILES_ACTIVE
           value: stateful
-        - name: _JAVA_OPTIONS
-          value: -Duser.language=ja -Duser.country=JP -Dfile.encoding=UTF-8
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
         image: harbor.lespaulstudioplus.info/tap/supply-chain/twitter-demo-stateful-default@sha256:73c24cbcdfca3d2c99bf90a13d7c5c4a0cae8277e0ce341ff969555ccfd01214
