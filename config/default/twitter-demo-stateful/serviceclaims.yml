@@ -1,0 +1,63 @@
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-stateful-rabbitmq
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo-stateful
+    apps.tanzu.vmware.com/workload-type: tcp
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo-stateful
+spec:
+  name: rabbitmq
+  service:
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: rmq-claim
+  workload:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: twitter-demo-stateful
+---
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-stateful-twitter
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo-stateful
+    apps.tanzu.vmware.com/workload-type: tcp
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo-stateful
+spec:
+  name: twitter
+  service:
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: twitter-claim
+  workload:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: twitter-demo-stateful
+---
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-stateful-wavefront
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo-stateful
+    apps.tanzu.vmware.com/workload-type: tcp
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo-stateful
+spec:
+  name: wavefront
+  service:
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: wavefront-claim
+  workload:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: twitter-demo-stateful
+
