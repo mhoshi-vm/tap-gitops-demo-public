@@ -30,7 +30,7 @@ spec:
           appliveview-sample/app-live-view-connector-boot
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/twitter-demo-deploy:latest@sha256:a952d9235cbbacf67e1c96656876a2a78dc017989732e10a7caddfb0d59affbe
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/twitter-demo-source:latest@sha256:577398f31b5b0d35f40a9709dc7abd829aea51b038844f5c9b15073af0dd6f8b
         developer.conventions/target-containers: workload
         services.conventions.apps.tanzu.vmware.com/postgres: postgresql/42.3.6
         services.conventions.apps.tanzu.vmware.com/rabbitmq: amqp-client/5.14.2
@@ -53,7 +53,7 @@ spec:
           value: AAAAAAAAAAAAAAAAAAAAABSufQEAAAAAp9WQTUcB4Oqx7vDff9FF7zRBacI%3Dl3ODVbT2b9dAgThHSFAm5UMZI3n6nqUWIO2ZjyGaBNeRoIOT8w
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-deploy-default@sha256:e7dd0f983addb1d8786d73ac61abbb1185f8c64133080dfb2ec469ddd27f5530
+        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-deploy-default@sha256:296622a383334f8432dffb9f151f76fbabc7c0a9f9fc32fab8054d905e36f895
         livenessProbe:
           httpGet:
             path: /livez
