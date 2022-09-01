@@ -47,7 +47,7 @@ spec:
           value: stateless
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-tap-demo@sha256:31d38ec0106765e7502c366014b2c56e4b712fbc327bad146781394d419db285
+        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-tap-demo@sha256:b1043f98783aed97aaea3a939065bdd752becae69910db7e2d6c5c24932f964f
         livenessProbe:
           httpGet:
             path: /livez
