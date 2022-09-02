@@ -23,7 +23,7 @@ spec:
       - env:
         - name: SPRING_PROFILES_ACTIVE
           value: stateless
-        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-tap-demo@sha256:d2147ba4900be0f868d79f12243c01ee4db3127378cb24947e76dee9a4a1a7ae
+        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-tap-demo@sha256:549ddf104eac1f48da6732b9aa56b66ac5072fbb61c9d6797c075b4e93b8b392
         name: workload
         resources: {}
         securityContext:
