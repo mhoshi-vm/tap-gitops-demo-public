@@ -1,0 +1,84 @@
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-sso
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo
+spec:
+  name: sso
+  service:
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: sso-claim
+  workload:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: twitter-demo
+---
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-postgres
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo
+spec:
+  name: postgres
+  service:
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: postgres-claim
+  workload:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: twitter-demo
+---
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-rabbitmq
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo
+spec:
+  name: rabbitmq
+  service:
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: rmq-claim
+  workload:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: twitter-demo
+---
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: twitter-demo-wavefront
+  annotations: {}
+  labels:
+    app.kubernetes.io/part-of: twitter-demo
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo
+spec:
+  name: wavefront
+  service:
+    apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+    kind: ResourceClaim
+    name: wavefront-claim
+  workload:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: twitter-demo
+
