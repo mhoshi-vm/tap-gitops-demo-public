@@ -48,7 +48,7 @@ spec:
       containers:
       - env:
         - name: TWITTER_BEARER_TOKEN
-          value: AAAAAAAAAAAAAAAAAAAAAACBgQEAAAAAlQQPFn%2BL6BNmSRzn%2Fct2GJxFzeI%3DU0bSEFLWnif95WwNIFxb7eDL4TK0d4MUcVsMGMOAF9EK3JKW16
+          value: AAAAAAAAAAAAAAAAAAAAABSufQEAAAAAp9WQTUcB4Oqx7vDff9FF7zRBacI%3Dl3ODVbT2b9dAgThHSFAm5UMZI3n6nqUWIO2ZjyGaBNeRoIOT8w
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
         image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-deploy-tap-demo@sha256:f02502f67cabac34e9b9ae8c82d0876bce1f2219808ccd13608e7fba4613a64d
