@@ -20,7 +20,7 @@ spec:
         carto.run/workload-name: hello-nodejs
     spec:
       containers:
-      - image: ghcr.io/mhoshi-vm/tap99-demo/hello-nodejs-default@sha256:c116d55814d11ce35ff75387457f545486755d18b323f086d7a0d8dac3ac90c6
+      - image: ghcr.io/mhoshi-vm/tap99-demo/hello-nodejs-default@sha256:9a966eed1f014132ff7f086ae3b05f22bbc51694194674fd7f2489b0b42e9f72
         name: workload
         resources: {}
         securityContext:
