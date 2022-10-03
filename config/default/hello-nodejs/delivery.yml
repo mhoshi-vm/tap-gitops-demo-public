@@ -1,0 +1,29 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: hello-nodejs
+  labels:
+    app.kubernetes.io/part-of: hello-nodejs
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: hello-nodejs
+spec:
+  template:
+    metadata:
+      annotations:
+        conventions.apps.tanzu.vmware.com/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: hello-nodejs
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: hello-nodejs
+    spec:
+      containers:
+      - image: ghcr.io/mhoshi-vm/tap99-demo/hello-nodejs-default@sha256:4a0cb6a9c48b57d914766a046b3c878fec6d696379b965b1cea6215c8d8dbbd8
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
