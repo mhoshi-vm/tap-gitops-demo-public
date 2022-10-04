@@ -12,7 +12,7 @@ spec:
     metadata:
       annotations:
         boot.spring.io/actuator: http://:8081/actuator
-        boot.spring.io/version: 2.7.3
+        boot.spring.io/version: 2.7.4
         conventions.apps.tanzu.vmware.com/applied-conventions: |-
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
@@ -26,7 +26,7 @@ spec:
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
         developer.conventions/target-containers: workload
-        services.conventions.apps.tanzu.vmware.com/postgres: postgresql/42.3.6
+        services.conventions.apps.tanzu.vmware.com/postgres: postgresql/42.3.7
         services.conventions.apps.tanzu.vmware.com/rabbitmq: amqp-client/5.14.2
       labels:
         app.kubernetes.io/component: run
@@ -45,7 +45,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-tap-demo@sha256:698b049aebcdd2ae07cde369d3d0eeb1949cdb3d2f9f5bfa1da76e8ce9d8b7d4
+        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-tap-demo@sha256:aac6fd197c0525501694901b56f89be500925376ce8f33e6612155bac488776a
         livenessProbe:
           httpGet:
             path: /livez
