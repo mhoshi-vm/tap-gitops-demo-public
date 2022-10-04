@@ -30,7 +30,7 @@ spec:
           appliveview-sample/app-live-view-connector-boot
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/tap-demo:latest@sha256:96bf6d37f2164c580abdd946560dea35170a697449bca9516bee4e02fac3e50b
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/tap-demo:latest@sha256:fe42607b1ae4ef0d28beb5b5515a43562e2c9dc9c6083f0d31511060f961fbe9
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -51,7 +51,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/tanzu-java-web-app-default@sha256:033579d2ea6e1d6738c564db36457075e0620815b5ba3c4fc874e991366a32b4
+        image: ghcr.io/mhoshi-vm/tap99-demo/tanzu-java-web-app-default@sha256:d70197001e013221f56a7ee757594f7fc7a70ce500caf1b8fbc31cca59ba623e
         livenessProbe:
           httpGet:
             path: /livez
