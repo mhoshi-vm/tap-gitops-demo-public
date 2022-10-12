@@ -33,7 +33,7 @@ spec:
       annotations:
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 2.7.4
-        conventions.apps.tanzu.vmware.com/applied-conventions: |-
+        conventions.carto.run/applied-conventions: |-
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
           spring-boot-convention/spring-boot-web
