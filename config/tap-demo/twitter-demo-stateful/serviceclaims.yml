@@ -5,7 +5,7 @@ metadata:
   annotations: {}
   labels:
     app.kubernetes.io/part-of: twitter-demo-stateful
-    apps.tanzu.vmware.com/workload-type: tcp
+    apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/component: run
     carto.run/workload-name: twitter-demo-stateful
 spec:
@@ -26,7 +26,7 @@ metadata:
   annotations: {}
   labels:
     app.kubernetes.io/part-of: twitter-demo-stateful
-    apps.tanzu.vmware.com/workload-type: tcp
+    apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/component: run
     carto.run/workload-name: twitter-demo-stateful
 spec:
@@ -47,7 +47,7 @@ metadata:
   annotations: {}
   labels:
     app.kubernetes.io/part-of: twitter-demo-stateful
-    apps.tanzu.vmware.com/workload-type: tcp
+    apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/component: run
     carto.run/workload-name: twitter-demo-stateful
 spec:

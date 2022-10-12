@@ -4,9 +4,10 @@ metadata:
   name: twitter-demo-stateful
   annotations:
     kapp.k14s.io/update-strategy: fallback-on-replace
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
   labels:
     app.kubernetes.io/part-of: twitter-demo-stateful
-    apps.tanzu.vmware.com/workload-type: tcp
+    apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/component: run
     carto.run/workload-name: twitter-demo-stateful
 spec:
@@ -14,7 +15,7 @@ spec:
     matchLabels:
       app.kubernetes.io/component: run
       app.kubernetes.io/part-of: twitter-demo-stateful
-      apps.tanzu.vmware.com/workload-type: tcp
+      apps.tanzu.vmware.com/workload-type: server
       carto.run/workload-name: twitter-demo-stateful
       conventions.apps.tanzu.vmware.com/framework: spring-boot
       services.conventions.apps.tanzu.vmware.com/rabbitmq: workload
@@ -22,12 +23,6 @@ spec:
       tanzu.app.live.view.application.actuator.port: "8081"
       tanzu.app.live.view.application.flavours: spring-boot
       tanzu.app.live.view.application.name: twitter-demo-stateful
-  replicas: 1
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 0
   template:
     metadata:
       annotations:
@@ -49,7 +44,7 @@ spec:
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: twitter-demo-stateful
-        apps.tanzu.vmware.com/workload-type: tcp
+        apps.tanzu.vmware.com/workload-type: server
         carto.run/workload-name: twitter-demo-stateful
         conventions.apps.tanzu.vmware.com/framework: spring-boot
         services.conventions.apps.tanzu.vmware.com/rabbitmq: workload
@@ -64,7 +59,7 @@ spec:
           value: twitterclient
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-stateful-tap-demo@sha256:95d97747598142c248d73e7e986306694f68397ccee944aaf0e1c4ba011a00e6
+        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-stateful-tap-demo@sha256:2a86a067e0c9eee106371aa843b567733962b91e210f0a652859f85dc1da5f25
         livenessProbe:
           httpGet:
             path: /livez
@@ -83,4 +78,30 @@ spec:
         securityContext:
           runAsUser: 1000
       serviceAccountName: default
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: twitter-demo-stateful
+  labels:
+    app.kubernetes.io/part-of: twitter-demo-stateful
+    apps.tanzu.vmware.com/workload-type: server
+    app.kubernetes.io/component: run
+    carto.run/workload-name: twitter-demo-stateful
+spec:
+  selector:
+    app.kubernetes.io/component: run
+    app.kubernetes.io/part-of: twitter-demo-stateful
+    apps.tanzu.vmware.com/workload-type: server
+    carto.run/workload-name: twitter-demo-stateful
+    conventions.apps.tanzu.vmware.com/framework: spring-boot
+    services.conventions.apps.tanzu.vmware.com/rabbitmq: workload
+    tanzu.app.live.view: "true"
+    tanzu.app.live.view.application.actuator.port: "8081"
+    tanzu.app.live.view.application.flavours: spring-boot
+    tanzu.app.live.view.application.name: twitter-demo-stateful
+  ports:
+  - targetPort: 8080
+    port: 8080
+    name: http
 
