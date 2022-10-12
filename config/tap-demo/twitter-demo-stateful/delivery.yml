@@ -59,7 +59,7 @@ spec:
           value: twitterclient
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-stateful-tap-demo@sha256:2a86a067e0c9eee106371aa843b567733962b91e210f0a652859f85dc1da5f25
+        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-stateful-tap-demo@sha256:778225d1238fdbb5913bfd1f9663e717f65d5699ef83cafe6f46ec8342b9fee5
         livenessProbe:
           httpGet:
             path: /livez
