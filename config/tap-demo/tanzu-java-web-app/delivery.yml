@@ -19,7 +19,7 @@ spec:
         autoscaling.knative.dev/maxScale: "1"
         autoscaling.knative.dev/minScale: "1"
         boot.spring.io/actuator: http://:8081/actuator
-        boot.spring.io/version: 2.7.3
+        boot.spring.io/version: 2.7.4
         conventions.carto.run/applied-conventions: |-
           developer-conventions/debug-convention
           developer-conventions/live-update-convention
@@ -33,7 +33,7 @@ spec:
           appliveview-sample/app-live-view-connector-boot
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/tap-demo:latest@sha256:fe42607b1ae4ef0d28beb5b5515a43562e2c9dc9c6083f0d31511060f961fbe9
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/tap-demo:latest@sha256:55cec5b0e3ca204c48e2edc2a817b8053695271d1de9cb7fbde27cd8710b6207
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -54,7 +54,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/tanzu-java-web-app-tap-demo@sha256:4a50053e079c43ca5b5ba5fec96d2758d89783675855dcaf2edd0e645c363b35
+        image: ghcr.io/mhoshi-vm/tap99-demo/tanzu-java-web-app-tap-demo@sha256:5794547f6453d65dcf397c535083dc2364962cc9a7beb7402a5472af334cf17e
         livenessProbe:
           httpGet:
             path: /livez
