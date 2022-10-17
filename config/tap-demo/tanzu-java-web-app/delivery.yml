@@ -33,7 +33,7 @@ spec:
           appliveview-sample/app-live-view-connector-boot
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.lespaulstudioplus.info/library/tap-demo:latest@sha256:1636e2e759240b930366589cdbe622b55076735fc9a3fbfbf597013359349198
+        developer.apps.tanzu.vmware.com/image-source-digest: main/f0d6e2b65f284e5ca886db543c1926aa603f79ad
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -54,7 +54,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/tanzu-java-web-app-tap-demo@sha256:cc13b45e6c66164ca35cd16b5f5f95dcb91c16d0e20541afff7d3e280d6b9767
+        image: ghcr.io/mhoshi-vm/tap99-demo/tanzu-java-web-app-tap-demo@sha256:a1f451f29499b5d01214e36391cbc2a0ac59dbe31b1d1f36e2f3d4ac1fd0b894
         livenessProbe:
           httpGet:
             path: /livez
