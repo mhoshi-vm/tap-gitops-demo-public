@@ -80,7 +80,7 @@ spec:
   service:
     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
     kind: ResourceClaim
-    name: redis-claim
+    name: gemfire-claim
   workload:
     apiVersion: serving.knative.dev/v1
     kind: Service
