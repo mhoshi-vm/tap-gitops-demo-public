@@ -33,6 +33,7 @@ spec:
         services.conventions.apps.tanzu.vmware.com/postgres: postgresql/42.3.7
         services.conventions.apps.tanzu.vmware.com/rabbitmq: amqp-client/5.14.2
       labels:
+        apis.apps.tanzu.vmware.com/register-api: "true"
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: twitter-demo
         apps.tanzu.vmware.com/workload-type: web
