@@ -45,7 +45,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/vehicle-api-postgres-demo@sha256:cff5c1e8db082b7f328094c46b37e26a3eabcfcc5c1dbad23b72e149c96fd6f2
+        image: ghcr.io/mhoshi-vm/tap99-demo/vehicle-api-postgres-demo@sha256:9c990c941dbfc1ee1a44346eb1691afae44a05fc864cbd30416279001069fa8f
         livenessProbe:
           httpGet:
             path: /livez
