@@ -17,7 +17,7 @@ spec:
         conventions.carto.run/applied-conventions: |-
           developer-conventions/add-source-image-label
           appliveview-sample/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: master/96edaec4aeec28c9e00f4e6768f633cedeb56a51
+        developer.apps.tanzu.vmware.com/image-source-digest: master/367195543115d67f981785daff85d6aeac168cb4
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -25,7 +25,7 @@ spec:
         carto.run/workload-name: tanzu-nodejs-web-app
     spec:
       containers:
-      - image: ghcr.io/mhoshi-vm/tap99-demo/tanzu-nodejs-web-app-tap-demo@sha256:a3d0cfbfaf6b8a63cb7b165892b270a18653fca9a0c6eeff8ae5b86f335e6637
+      - image: ghcr.io/mhoshi-vm/tap99-demo/tanzu-nodejs-web-app-tap-demo@sha256:2bd2660e8bb14d4f27ff4f6d2f549c692dbdcd27aa2ff2d8b3288fd95d627926
         name: workload
         resources: {}
         securityContext:
