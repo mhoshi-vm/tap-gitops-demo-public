@@ -52,7 +52,7 @@ spec:
           value: mvc
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-tap-demo@sha256:dfb21aa399877b23a7a8790ebdf5201aa92169daf16c9422f980b60b2f4fabae
+        image: ghcr.io/mhoshi-vm/tap99-demo/twitter-demo-tap-demo@sha256:378aea20fac78a81be63731253cd7ada84f2944324ff5dbb0e404989e7766e57
         livenessProbe:
           httpGet:
             path: /livez
